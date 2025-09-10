@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Tours from "./components/Tours";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import Registration from "./components/Registration"
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/tours" element={<Tours />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/register" element={<Registration />} />
       </Routes>
       <Footer />
     </BrowserRouter>

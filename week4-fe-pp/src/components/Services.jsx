@@ -6,6 +6,11 @@ import Service from './Service'
 
 const Services = () => {
   const [servicesData, setServicesData] = useState(services);
+  const handleDeleteServices = (serviceId) => {
+    // Filter out the item with the specified ID and update the state
+    const updatedServices = servicesData.filter((service) => service.id !== serviceId);
+    setServicesData(updatedServices);
+  };
 
   return (
     <section className='section services' id='services'>
@@ -13,9 +18,10 @@ const Services = () => {
 
       <div className='section-center services-center'>
         {servicesData.map((service) => {
-          return <Service {...service} key={service.id} />
+          return <Service {...service} key={service.id} onDelete={handleDeleteServices}/>
         })}
       </div>
+
     </section>
   )
 }
